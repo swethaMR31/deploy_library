@@ -1,0 +1,25 @@
+{% load static %}
+
+<html>
+    <body>
+        <h1>Hello World</h1>
+        <div class = "django_two">
+            {% if access_records %}
+            <table style = "border: 2px solid black;">
+                <thead>
+                    <th style = "border: 2px solid black;">Site Name</th>
+                    <th style = "border: 2px solid black;">Date Accessed</th>
+                </thead>
+                {% for access in access_records %}
+                <tr>
+                    <td style = "border: 2px solid black;">{{access.name}}</td>
+                    <td style = "border: 2px solid black;">{{access.date}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+                <p>No access records found!</p>
+            {% endif %}
+        </div>
+    </body>
+</html>

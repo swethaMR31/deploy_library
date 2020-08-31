@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for object in object_list %}
+    <li>{{object.name }}</li>
+    <li>{{object.picture}}</li>
+    <li>{{object.author }}</li>
+        <li>{{object.email }}</li>
+    <li>{{object.describe }}</li>
+
+
+    <hr/>
+    {% empty %}
+    <li>No objects</li>
+    {% endfor %}
+
+
+</ul>
+</body>
+</html>

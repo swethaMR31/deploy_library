@@ -1,0 +1,32 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <h1 style = "text-align: center;">Employee Details Table</h1><br>
+        <div class = "employee">
+            {% if details %}
+            <table class="table">
+                <thead class="thead-dark">
+                    <th  scope="row">S.No</th>
+                    <th  scope="row">First Name</th>
+                    <th  scope="row">Last Name</th>
+                    <th  scope="row">Email ID</th>
+                </thead>
+                {% for record in details %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{record.first_name}}</td>
+                    <td>{{record.last_name}}</td>
+                    <td>{{record.email}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+                <p>No records found!</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
